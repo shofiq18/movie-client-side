@@ -15,7 +15,7 @@ const Mail = () => {
                     placeholder="Enter your email"
                     className="flex-grow text-black pr-36 ps-3 py-4 outline-none bg-gray-200"
                 />
-                <button className="bg-red-700 text-black px-4 py-4 hover:bg-yellow-600">
+                <button className="bg-black text-white border-red-700  hover:bg-red-700 hover:text-black  px-4 py-4 ">
                     GET STARTED
                 </button>
             </div>

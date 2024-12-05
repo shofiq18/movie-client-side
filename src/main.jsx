@@ -14,7 +14,6 @@ import Error from './components/Error';
 import AddMovie from './components/private/AddMovie';
 import AllMovies from './components/public/AllMovies';
 import MyFavorites from './components/private/MyFavorites';
-import Contact from './components/public/Contact';
 import ContactUs from './components/public/ContactUs';
 
 
