@@ -11,6 +11,11 @@ import Register from './components/Register';
 import Home from './components/Home';
 import AuthProvider from './components/Provider/AuthProvider';
 import Error from './components/Error';
+import AddMovie from './components/private/AddMovie';
+import AllMovies from './components/public/AllMovies';
+import MyFavorites from './components/private/MyFavorites';
+import Contact from './components/public/Contact';
+import ContactUs from './components/public/ContactUs';
 
 
 
@@ -32,6 +37,22 @@ const router = createBrowserRouter([
         path: '/register', 
         element: <Register></Register>
       }, 
+      {
+        path: '/add', 
+        element: <AddMovie></AddMovie>
+      }, 
+      {
+        path: '/movies', 
+        element: <AllMovies></AllMovies>
+      }, 
+      {
+        path: '/favorites', 
+        element: <MyFavorites></MyFavorites>
+      }, 
+      {
+        path: '/contact', 
+        element: <ContactUs></ContactUs>
+      }
 
 
     ]

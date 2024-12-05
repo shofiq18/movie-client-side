@@ -82,7 +82,7 @@ const Register = () => {
             <div data-aos="flip-left"
                 data-aos-easing="ease-out-cubic"
                 data-aos-duration="2000" className="flex justify-center items-center my-12 ">
-                <div className="hero-content flex-col ">
+                <div className="hero-content bg-zinc-900 flex-col ">
                     <div className="text-center lg:text-left">
                         <h1 className=" text-2xl md:text-3xl lg:text-5xl font-bold">
                             Register now!
@@ -144,7 +144,7 @@ const Register = () => {
                                 )}
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn bg-green-500">Register</button>
+                                <button className="btn bg-red-700 hover:bg-gray-500 text-black">Register</button>
                             </div>
                         </form>
                         <p className="text-center">or</p>
@@ -158,7 +158,7 @@ const Register = () => {
                         </div>
                         <p className="ml-4 mt-4 text-base text-center text-gray-600">
                             Already have an Account?{" "}
-                            <Link className="text-red-400 border-b" to="/login">
+                            <Link className="text-red-700 border-b ml-4" to="/login">
                                 Login
                             </Link>
                         </p>
