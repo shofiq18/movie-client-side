@@ -1,0 +1,28 @@
+.rating-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .rating {
+    display: flex; /* Align items in a row */
+    gap: 5px; /* Space between stars */
+  }
+  
+  .star {
+    font-size: 30px; /* Size of the star */
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .star.active {
+    color: gold; /* Highlight active stars */
+  }
+  
+  p {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  

@@ -7,6 +7,8 @@ import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Rating } from 'react-simple-star-rating';
+import { FaRegStar, FaStar } from 'react-icons/fa';
+import './rating.css'
 
 const AddMovie = ({ userEmail, onAddMovie }) => {
     const {
@@ -19,11 +21,11 @@ const AddMovie = ({ userEmail, onAddMovie }) => {
 
     const [rating, setRating] = useState(0);
 
-    // Handle rating changes
     const handleRating = (rate) => {
         setRating(rate);
-        setValue('rating', rate); // Set rating in react-hook-form
+        // other logic
     };
+
 
     const onSubmit = (data) => {
         if (!rating) {
@@ -159,16 +161,23 @@ const AddMovie = ({ userEmail, onAddMovie }) => {
                     </div>
 
                     {/* Rating */}
-                    {/* Rating */}
-                    <div className="flex items-center space-x-4 my-6">
-                        <label className="text-white font-medium">Rating:</label>
-                        <div className="inline-flex items-center" style={{ display: 'inline-flex', alignItems: 'center' }}>
-                            <Rating onClick={handleRating} ratingValue={rating} />
+                
+                    <div className="py-4  my-auto">
+                        <div className="">
+                            <div className="rating">
+                                {[1, 2, 3, 4, 5].map((rate) => (
+                                    <span
+                                        key={rate}
+                                        className={`star ${rating >= rate ? 'active' : ''}`}
+                                        onClick={() => handleRating(rate)}
+                                    >
+                                        ★
+                                    </span>
+                                ))}
+                            </div>
+                            <p>Rating: {rating}</p>
                         </div>
                     </div>
-
-
-
 
 
                     {/* Submit Button */}
@@ -178,6 +187,7 @@ const AddMovie = ({ userEmail, onAddMovie }) => {
                 </form>
             </div>
             <ToastContainer />
+
         </div>
     );
 };
