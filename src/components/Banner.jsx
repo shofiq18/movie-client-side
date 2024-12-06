@@ -10,10 +10,10 @@ const Banner = () => {
             data-aos-easing="ease-in-sine" className="carousel w-full h-[400px] lg:h-[600px]">
             <div id="slide1" className="carousel-item relative w-full">
                 <img
-                    src="https://i.ibb.co.com/qy3PFgM/hq720.jpg"
-                    className="w-full  "
+                    src="https://i.ibb.co.com/px71mqY/main.jpg"
+                    className="w-full "
                 />
-                <div className="absolute left-2 right-2 lg:left-80 lg:right-5 top-1/2 space-y-3  -translate-y-2/3 transform   ">
+                <div className="absolute left-2 right-2 lg:left-80 lg:right-5 top-2/3 space-y-3  -translate-y-2/3 transform   ">
                     <p className="text-2xl font-bold text-red-600">Movie Portal</p>
                     <p className="text-white font-bold text-7xl">Unlimited <span className="text-red-700">Movie</span>, TVs <br /> Shows, & More.</p>
                     <div className="flex justify-start items-center gap-4 text-gray-200">
