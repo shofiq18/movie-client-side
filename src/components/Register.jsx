@@ -82,7 +82,7 @@ const Register = () => {
             <div data-aos="flip-left"
                 data-aos-easing="ease-out-cubic"
                 data-aos-duration="2000" className="flex justify-center items-center my-12 ">
-                <div className="hero-content bg-zinc-900 flex-col ">
+                <div className="hero-content border border-gray-800 flex-col ">
                     <div className="text-center lg:text-left">
                         <h1 className=" text-2xl md:text-3xl lg:text-5xl font-bold">
                             Register now!
@@ -98,7 +98,7 @@ const Register = () => {
                                     type="text"
                                     placeholder="name"
                                     name="name"
-                                    className="input input-bordered"
+                                    className="input input-bordered bg-gray-900"
                                     required
                                 />
                             </div>
@@ -110,7 +110,7 @@ const Register = () => {
                                     type="text"
                                     placeholder="photo-url"
                                     name="photo"
-                                    className="input input-bordered"
+                                    className="input input-bordered bg-gray-900"
                                     required
                                 />
                             </div>
@@ -122,7 +122,7 @@ const Register = () => {
                                     type="email"
                                     placeholder="email"
                                     name="email"
-                                    className="input input-bordered"
+                                    className="input input-bordered bg-gray-900"
                                     required
                                 />
                             </div>
@@ -134,7 +134,7 @@ const Register = () => {
                                     type="password"
                                     placeholder="password"
                                     name="password"
-                                    className="input input-bordered"
+                                    className="input input-bordered bg-gray-900"
                                     required
                                 />
                                 {error.password && (
@@ -144,19 +144,19 @@ const Register = () => {
                                 )}
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn bg-red-700 hover:bg-gray-500 text-black">Register</button>
+                                <button className="btn  bg-black border-red-700 text-white hover:bg-red-700 hover:text-black">Register</button>
                             </div>
                         </form>
                         <p className="text-center">or</p>
                         <div className="form-control mt-4 px-8">
-                            <button onClick={handleGoogleRegister} className="btn font-normal border-green-300">
+                            <button onClick={handleGoogleRegister} className="btn font-normal bg-black border-green-300">
                                 <span className="mr-4 text-xl">
                                     <FcGoogle />
                                 </span>
                                 Login with Google
                             </button>
                         </div>
-                        <p className="ml-4 mt-4 text-base text-center text-gray-600">
+                        <p className="ml-4 mt-4 text-base text-center text-gray-500">
                             Already have an Account?{" "}
                             <Link className="text-red-700 border-b ml-4" to="/login">
                                 Login
