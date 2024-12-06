@@ -15,6 +15,7 @@ import AddMovie from './components/private/AddMovie';
 import AllMovies from './components/public/AllMovies';
 import MyFavorites from './components/private/MyFavorites';
 import ContactUs from './components/public/ContactUs';
+import AllMovie from './components/public/AllMovie';
 
 
 
@@ -42,7 +43,8 @@ const router = createBrowserRouter([
       }, 
       {
         path: '/movies', 
-        element: <AllMovies></AllMovies>
+        element: <AllMovies></AllMovies>, 
+        loader: () => fetch('http://localhost:5000/movie')
       }, 
       {
         path: '/favorites', 

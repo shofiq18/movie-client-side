@@ -2,15 +2,18 @@
 
 
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Rating } from 'react-simple-star-rating';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import './rating.css'
+import { AuthContext } from '../Provider/AuthProvider';
 
 const AddMovie = ({ userEmail, onAddMovie }) => {
+    const {user} = useContext(AuthContext);
+
     const {
         register,
         handleSubmit,
@@ -28,28 +31,51 @@ const AddMovie = ({ userEmail, onAddMovie }) => {
 
 
     const onSubmit = (data) => {
-        if (!rating) {
-            toast.error("Please select a rating");
+        // Check if user is logged in
+        if (!user?.email) {
+            toast.error("You must be logged in to add a movie.");
             return;
         }
 
         // Format the data
         const movieData = {
-            poster: data.poster,              // string URL
-            title: data.title,                // string
-            genre: [data.genre],              // array (wrap in array)
-            duration: Number(data.duration),  // number
-            releaseYear: Number(data.releaseYear), // number
-            rating,                           // number (from state)
-            summary: data.summary,            // string
-            email: userEmail,                 // string (user's email)
+            poster: data.poster,              
+            title: data.title,                
+            genre: [data.genre],              
+            duration: Number(data.duration),  
+            releaseYear: Number(data.releaseYear), 
+            rating,                           
+            summary: data.summary,            
+            email: user.email,              
         };
 
         // Simulate saving to a database
         toast.success("Movie added successfully!");
         console.log("Movie Data:", movieData);
 
-        if (onAddMovie) onAddMovie(movieData); // Optional callback
+        if (onAddMovie) onAddMovie(movieData); 
+
+        // send data to server 
+
+        fetch('http://localhost:5000/movie', {
+            method: 'POST', 
+            headers: {
+                'content-type' :  'application/json'
+            }, 
+            body: JSON.stringify(movieData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            } )
+            .catch(error => {
+                console.error('Error adding movie:', error);
+            });
+
+
+
+
+
     };
 
 
@@ -59,6 +85,7 @@ const AddMovie = ({ userEmail, onAddMovie }) => {
             <div className='border border-gray-800 max-w-3xl mx-auto  p-8  '>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* Movie Poster */}
+                    {user?.email && (<p>{user.email}</p>)}
 
                     <div className="flex flex-col my-6">
                         <label htmlFor="poster" className='mb-2'>Movie Poster (URL)</label>
