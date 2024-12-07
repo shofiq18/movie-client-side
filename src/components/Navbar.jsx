@@ -32,7 +32,7 @@ const Navbar = () => {
     );
 
     return (
-        <div data-aos="fade-down " className='sticky top-0 z-50 shadow-md bg-black'  >
+        <div data-aos="fade-down " className='sticky top-0 z-50 shadow-md bg-black py-4'  >
             <div className="navbar  max-w-7xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
