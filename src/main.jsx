@@ -15,7 +15,7 @@ import AddMovie from './components/private/AddMovie';
 import AllMovies from './components/public/AllMovies';
 import MyFavorites from './components/private/MyFavorites';
 import ContactUs from './components/public/ContactUs';
-import AllMovie from './components/public/AllMovie';
+
 
 
 

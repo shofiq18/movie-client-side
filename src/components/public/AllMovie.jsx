@@ -7,7 +7,7 @@ const AllMovie = ({ movie }) => {
             <figure>
                 <img
                     src={movie.poster}
-                    alt="Shoes" />
+                    alt="Shoes" className="w-full h-[400px]" />
             </figure>
             <div className="card-body">
                 <h2 className="card-title">{movie.title}</h2>
