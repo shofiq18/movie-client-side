@@ -7,6 +7,7 @@ const AllMovies = () => {
     if (!Array.isArray(movies)) {
         return <div>Error: Movies data is not available or not in an array format.</div>;
     }
+    console.log(movies);
     return (
         <div >
             

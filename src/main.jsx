@@ -15,6 +15,8 @@ import AddMovie from './components/private/AddMovie';
 import AllMovies from './components/public/AllMovies';
 import MyFavorites from './components/private/MyFavorites';
 import ContactUs from './components/public/ContactUs';
+import Details from './components/private/Details';
+import Feature from './components/public/Feature';
 
 
 
@@ -53,7 +55,18 @@ const router = createBrowserRouter([
       {
         path: '/contact', 
         element: <ContactUs></ContactUs>
+      },
+      {
+        path: '/details/:id', 
+        element: <Details></Details>,
+        loader: ({params}) => fetch(`http://localhost:5000/movie/${params.id}`)
+      }, 
+      {
+        path: '/feature', 
+        element: <Feature></Feature>
       }
+
+
 
 
     ]
