@@ -10,8 +10,8 @@ const AllMovies = () => {
     return (
         <div >
             
-            <h1>This is all movies page </h1>
-            <h1>total movies : {movies.length}</h1>
+            <h1 className="text-white font-bold text-4xl text-center my-12"> Our All Movies  </h1>
+            
             <div className="grid md:grid-cols-3 my-12 max-w-7xl mx-auto gap-5 ">
             {
                 movies.map(movie => (<AllMovie key={movie._id}  movie={movie}></AllMovie>) )
