@@ -18,6 +18,7 @@ import ContactUs from './components/public/ContactUs';
 import Details from './components/private/Details';
 import Feature from './components/public/Feature';
 import UpdateMovie from './components/private/UpdateMovie';
+import PrivateRoute from './components/PrivateRoute';
 
 
 
@@ -33,43 +34,51 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path: '/login', 
+        path: '/login',
         element: <Login></Login>
       },
       {
-        path: '/register', 
+        path: '/register',
         element: <Register></Register>
-      }, 
+      },
       {
-        path: '/add', 
-        element: <AddMovie></AddMovie>
-      }, 
+        path: '/add',
+        element: <PrivateRoute>
+          <AddMovie></AddMovie>
+        </PrivateRoute>
+      },
       {
-        path: '/movies', 
-        element: <AllMovies></AllMovies>, 
+        path: '/movies',
+        element: <AllMovies></AllMovies>,
         loader: () => fetch('http://localhost:5000/movie')
-      }, 
+      },
       {
-        path: '/favorites', 
-        element: <MyFavorites></MyFavorites>
-      }, 
+        path: '/favorites',
+        element: <PrivateRoute>
+          <MyFavorites></MyFavorites>
+        </PrivateRoute>
+      },
       {
-        path: '/contact', 
+        path: '/contact',
         element: <ContactUs></ContactUs>
       },
       {
-        path: '/details/:id', 
-        element: <Details></Details>,
-        loader: ({params}) => fetch(`http://localhost:5000/movie/${params.id}`)
-      }, 
+        path: '/details/:id',
+        element: <PrivateRoute>
+          <Details></Details>
+        </PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/movie/${params.id}`)
+      },
       {
-        path: '/feature', 
+        path: '/feature',
         element: <Feature></Feature>
-      }, 
+      },
       {
-        path: '/update/:id', 
-        element: <UpdateMovie></UpdateMovie>,
-        loader: ({params}) => fetch(`http://localhost:5000/movie/${params.id}`)
+        path: '/update/:id',
+        element: <PrivateRoute>
+          <UpdateMovie></UpdateMovie>
+        </PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/movie/${params.id}`)
       }
 
 
@@ -81,8 +90,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <AuthProvider>
-   <RouterProvider router={router} />
-   </AuthProvider>
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )
