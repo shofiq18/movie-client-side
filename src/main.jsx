@@ -17,6 +17,7 @@ import MyFavorites from './components/private/MyFavorites';
 import ContactUs from './components/public/ContactUs';
 import Details from './components/private/Details';
 import Feature from './components/public/Feature';
+import UpdateMovie from './components/private/UpdateMovie';
 
 
 
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       {
         path: '/feature', 
         element: <Feature></Feature>
+      }, 
+      {
+        path: '/update', 
+        element: <UpdateMovie></UpdateMovie>
       }
 
 

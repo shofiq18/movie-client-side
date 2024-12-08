@@ -76,11 +76,11 @@ const Details = () => {
                             className="btn rounded-full border-yellow-600 mr-6 bg-black text-white hover:bg-red-700 hover:text-black">
                             Add to Favorite
                         </button>
-                        <button
+                             <Link to='/update'><button
                             type="submit"
                             className="btn rounded-full border-green-700 bg-black text-white hover:bg-red-700 hover:text-black">
                             Update Movie
-                        </button>
+                        </button></Link>
                     </div>
                 </div>
             </div>

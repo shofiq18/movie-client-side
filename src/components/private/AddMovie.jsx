@@ -17,8 +17,6 @@ const AddMovie = ({ userEmail, onAddMovie }) => {
     const {
         register,
         handleSubmit,
-        setValue,
-        watch,
         formState: { errors },
     } = useForm();
 
@@ -31,6 +29,11 @@ const AddMovie = ({ userEmail, onAddMovie }) => {
 
 
     const onSubmit = (data) => {
+
+        if (rating < 1) {
+            toast.error("Please provide a rating.");
+            return;
+        }
         // Check if user is logged in
         if (!user?.email) {
             toast.error("You must be logged in to add a movie.");
@@ -140,7 +143,7 @@ const AddMovie = ({ userEmail, onAddMovie }) => {
                     </div>
 
                     {/* Duration */}
-                    <div lassName="flex flex-col mt-6">
+                    <div className='flex flex-col mt-6'>
                         <label htmlFor="duration" >Duration (minutes)</label>
                         <input
                             type="number"
@@ -156,7 +159,7 @@ const AddMovie = ({ userEmail, onAddMovie }) => {
                     </div>
 
                     {/* Release Year */}
-                    <div lassName="flex flex-col ">
+                    <div className='flex flex-col'>
                         <label htmlFor="releaseYear" className='mt-8'>Release Year</label>
                         <select id="releaseYear"
                             className="input input-bordered w-full bg-gray-900 mb-6 mt-2 "
@@ -170,7 +173,7 @@ const AddMovie = ({ userEmail, onAddMovie }) => {
                         {errors.releaseYear && <p className="error">{errors.releaseYear.message}</p>}
                     </div>
                     {/* Summary */}
-                    <div lassName="flex flex-col  ">
+                    <div className='flex flex-col'>
                         <label htmlFor="summary">Summary</label>
                         <textarea
                             id="summary"
