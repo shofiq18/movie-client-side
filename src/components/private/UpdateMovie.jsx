@@ -59,7 +59,7 @@ const UpdateMovie = ({ onAddMovie }) => {
 
         // send data to server 
 
-        fetch(`http://localhost:5000/update/${update._id}`, {
+        fetch(`https://movie-portal-server-sigma.vercel.app/update/${update._id}`, {
             method: 'PUT', 
             headers: {
                 'content-type' :  'application/json'

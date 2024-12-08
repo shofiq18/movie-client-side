@@ -11,7 +11,7 @@ const FeaturesMovies = () => {
     useEffect(() => {
         const fetchMovies = async () => {
             try {
-                const response = await fetch("http://localhost:5000/movie/top");
+                const response = await fetch("https://movie-portal-server-sigma.vercel.app/movie/top");
                 const data = await response.json();
                 setMovies(data); // Set the state with the fetched movies
             } catch (error) {

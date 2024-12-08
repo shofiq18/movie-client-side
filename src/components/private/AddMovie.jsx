@@ -60,7 +60,7 @@ const AddMovie = ({ userEmail, onAddMovie }) => {
 
         // send data to server 
 
-        fetch('http://localhost:5000/movie', {
+        fetch('https://movie-portal-server-sigma.vercel.app/movie', {
             method: 'POST', 
             headers: {
                 'content-type' :  'application/json'

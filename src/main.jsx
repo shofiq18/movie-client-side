@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       {
         path: '/movies',
         element: <AllMovies></AllMovies>,
-        loader: () => fetch('http://localhost:5000/movie')
+        loader: () => fetch('https://movie-portal-server-sigma.vercel.app/movie')
       },
       {
         path: '/favorites',
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <Details></Details>
         </PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/movie/${params.id}`)
+        loader: ({ params }) => fetch(`https://movie-portal-server-sigma.vercel.app/movie/${params.id}`)
       },
       {
         path: '/feature',
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <UpdateMovie></UpdateMovie>
         </PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/movie/${params.id}`)
+        loader: ({ params }) => fetch(`https://movie-portal-server-sigma.vercel.app/movie/${params.id}`)
       }
 
 
