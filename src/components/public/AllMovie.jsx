@@ -8,7 +8,7 @@ import ReactStars from "react-rating-stars-component";
 const AllMovie = ({ movie }) => {
 
     return (
-        <div className="card card-compact bg-gray-950 w-96 shadow-lg">
+        <div className="card card-compact bg-gray-950 w-96  shadow-lg">
             <figure>
                 <img
                     src={movie.poster}

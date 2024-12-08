@@ -1,0 +1,58 @@
+/* Default light theme */
+:root {
+    --text-color: black;
+    --bg-color: white;
+    --link-color: blue;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+    --text-color: white;
+    --bg-color: black;
+    --link-color: lightblue;
+}
+
+/* Light theme */
+[data-theme="light"] {
+    --text-color: black;
+    --bg-color: white;
+    --link-color: blue;
+}
+
+/* Global styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Button styles */
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-dark {
+    background-color: white;
+    color: black;
+}
+
+.btn-light {
+    background-color: black;
+    color: white;
+}

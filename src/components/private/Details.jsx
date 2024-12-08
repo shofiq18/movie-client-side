@@ -7,6 +7,24 @@ const Details = () => {
     const detail = useLoaderData();
     const navigate = useNavigate();
 
+
+    const handleAddToFavorites = (movie) => {
+        const favoriteMovie = { ...movie, email: "shafiqul.islam25021998@gmail.com" }; // Replace with user's email
+        fetch("https://movie-portal-server-sigma.vercel.app/favorites", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(favoriteMovie)
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.insertedId) {
+                    Swal.fire("Success!", "Movie added to favorites!", "success");
+                }
+            })
+            .catch((err) => console.error("Error adding to favorites:", err));
+    };
+
+
     const handleDelete = (_id) => {
         console.log(_id);
         Swal.fire({
@@ -22,27 +40,27 @@ const Details = () => {
                 fetch(`https://movie-portal-server-sigma.vercel.app/movie/${_id}`, {
                     method: "DELETE"
                 })
-                .then((res) => res.json())
-                .then((data) => {
-                    console.log(data);
-                    if (data.deletedCount > 0) {
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            }).then(() => {
+                                navigate("/movies"); // Redirect to the movies page
+                            });
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error deleting the movie:", error);
                         Swal.fire({
-                            title: "Deleted!",
-                            text: "Your file has been deleted.",
-                            icon: "success"
-                        }).then(() => {
-                            navigate("/movies"); // Redirect to the movies page
+                            title: "Error!",
+                            text: "There was an error deleting the movie.",
+                            icon: "error"
                         });
-                    }
-                })
-                .catch((error) => {
-                    console.error("Error deleting the movie:", error);
-                    Swal.fire({
-                        title: "Error!",
-                        text: "There was an error deleting the movie.",
-                        icon: "error"
                     });
-                });
             }
         });
     };
@@ -50,7 +68,7 @@ const Details = () => {
     return (
         <div>
             <h1 className="text-4xl font-bold text-white text-center mt-8 ">Movie Details</h1>
-            
+
             <div className="max-w-4xl mx-auto my-16 card card-side  bg-gray-950 shadow-xl">
                 <figure>
                     <img
@@ -71,12 +89,19 @@ const Details = () => {
                             className="btn rounded-full border-red-700 mr-6 bg-black text-white hover:bg-red-700 hover:text-black">
                             Delete Movie
                         </button>
-                        <button
+                        {/* <button
                             type="submit"
                             className="btn rounded-full border-yellow-600 mr-6 bg-black text-white hover:bg-red-700 hover:text-black">
                             Add to Favorite
+                        </button> */}
+
+                        <button
+                            onClick={() => handleAddToFavorites(detail)}
+                            className="btn rounded-full border-yellow-600 bg-black text-white hover:bg-yellow-600 hover:text-black">
+                            Add to Favorite
                         </button>
-                             <Link to={`/update/${detail._id}`}><button
+
+                        <Link to={`/update/${detail._id}`}><button
                             type="submit"
                             className="btn rounded-full border-green-700 bg-black text-white hover:bg-red-700 hover:text-black">
                             Update Movie

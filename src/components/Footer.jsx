@@ -3,8 +3,8 @@ import { MdOutlineCopyright, MdOutlineEmail } from "react-icons/md";
 
 const Footer = () => {
     return (
-        <div className="bg-zinc-950">
-            <footer className="footer max-w-7xl mb-0 mx-auto px-3 lg:px-0 text-base-content  py-28">
+        <div className="">
+            <footer className="footer max-w-7xl mb-0 mx-auto px-3 md:px-5 lg:px-0 text-base-content  py-28">
                 <nav className="text-base text-gray-300">
                     <h6 className="footer text-3xl font-bold text-gray-300 text-red-600">Movie Portal</h6>
                     <div className="flex items-center gap-3 mt-5">
