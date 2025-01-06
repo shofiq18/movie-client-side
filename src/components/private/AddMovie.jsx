@@ -6,8 +6,6 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Rating } from 'react-simple-star-rating';
-import { FaRegStar, FaStar } from 'react-icons/fa';
 import './rating.css'
 import { AuthContext } from '../Provider/AuthProvider';
 

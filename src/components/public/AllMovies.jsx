@@ -37,8 +37,11 @@ const AllMovies = () => {
 
     return (
         <div>
-            <h1 className="text-white font-bold text-2xl md:text-3xl lg:text-5xl text-center my-12">Our All Movies</h1>
+            <div className="max-w-7xl mx-auto my-12">
+            <h1 className="text-gray-300 font-bold text-2xl md:text-3xl lg:text-5xl ">Movies</h1>
+            <p className="text-gray-300">Movies move us like nothing else can, whether they’re scary, funny, <br /> dramatic, romantic or anywhere in-between. So many titles, so much to <br /> experience.</p>
 
+            </div>
            
             <div className="text-center mb-8">
                 <input
@@ -51,7 +54,7 @@ const AllMovies = () => {
             </div>
 
            
-            <div className="grid md:grid-cols-3 my-12 max-w-7xl mx-auto  gap-5">
+            <div className="grid md:grid-cols-3 lg:grid-cols-4 my-12 max-w-7xl mx-auto  gap-5">
                 {filteredMovies.length > 0 ? (
                     filteredMovies.map(movie => (
                         <AllMovie key={movie._id} movie={movie}></AllMovie>

@@ -64,9 +64,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/details/:id',
-        element: <PrivateRoute>
-          <Details></Details>
-        </PrivateRoute>,
+        element: 
+          <Details></Details>,
         loader: ({ params }) => fetch(`https://movie-portal-server-sigma.vercel.app/movie/${params.id}`)
       },
       {

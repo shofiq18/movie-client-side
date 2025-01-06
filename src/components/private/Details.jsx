@@ -69,7 +69,7 @@ const Details = () => {
         <div>
             <h1 className="text-4xl font-bold text-white text-center mt-8 ">Movie Details</h1>
 
-            <div className="max-w-4xl mx-auto my-16 card card-side  bg-gray-950 shadow-xl">
+            <div className="max-w-4xl mx-auto my-16 card md:card-side  bg-gray-950 shadow-xl">
                 <figure>
                     <img
                         src={detail.poster}
