@@ -5,7 +5,7 @@ const ContactUs = () => {
     return (
         <div>
             <div className="my-14  max-w-7xl mx-auto flex  items-center justify-center ">
-                <p className="text-3xl md:text-4xl font-bold text-white border-b border-gray-600 ">Contact Us</p>
+                <p className="text-3xl md:text-4xl font-bold  border-b border-gray-600 ">Contact Us</p>
             </div>
             <div className="flex flex-col-reverse md:flex-row md:flex  justify-center items-start max-w-7xl mx-auto   text-white md:p-8 gap-8">
             {/* Contact Form */}

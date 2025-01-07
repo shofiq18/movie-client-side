@@ -1,58 +1,151 @@
-/* Default light theme */
+/* Root Theme Variables (Light Mode by Default) */
 :root {
-    --text-color: black;
-    --bg-color: white;
-    --link-color: blue;
+    --background-color: #ffffff; /* Light mode background */
+    --text-color: #000000; /* Light mode text */
+    --secondary-color: #f0f0f0; /* Light mode secondary background */
+    --link-color: #007bff; /* Light mode link color */
+    --link-hover-color: #ff4500; /* Light mode link hover color */
 }
 
-/* Dark theme */
-[data-theme="dark"] {
-    --text-color: white;
-    --bg-color: black;
-    --link-color: lightblue;
+/* Dark Mode Variables */
+body.dark-mode {
+    --background-color: #121212; /* Dark mode background */
+    --text-color: #ffffff; /* Dark mode text */
+    --secondary-color: #1f1f1f; /* Dark mode secondary background */
+    --link-color: #1e90ff; /* Dark mode link color */
+    --link-hover-color: #ff6347; /* Dark mode link hover color */
 }
 
-/* Light theme */
-[data-theme="light"] {
-    --text-color: black;
-    --bg-color: white;
-    --link-color: blue;
-}
-
-/* Global styles */
+/* Apply the Theme */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
     color: var(--text-color);
-    background-color: var(--bg-color);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-a {
+
+
+
+
+.navbar a:hover {
+    color: var(--link-hover-color);
+}
+
+.menu a {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--link-hover-color);
+}
+
+footer {
+    
+    color: var(--text-color);
+    padding: 1rem;
+    text-align: center;
+}
+
+footer a {
     color: var(--link-color);
-    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-a:hover {
-    text-decoration: underline;
+footer a:hover {
+    color: var(--link-hover-color);
 }
 
-/* Button styles */
+/* Button Styles */
 .btn {
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    border: none;
+    border: 1px solid rgb(177, 12, 12); /* Red border */
+    background-color: transparent; /* Ghost style (no background) */
+    color: var(--text-color);
     transition: all 0.3s ease;
 }
 
-.btn-dark {
-    background-color: white;
-    color: black;
+.btn:hover {
+    background-color: rgb(168, 21, 21); /* Red background on hover */
+    color: white; /* White text on hover */
 }
 
-.btn-light {
-    background-color: black;
-    color: white;
+/* Navbar Login Button */
+.navbar .login-btn {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .login-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    background-color: transparent; /* Ghost style (no background) */
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--link-hover-color); /* Color on hover */
+}
+
+.theme-toggle-btn svg {
+    fill: var(--link-color); /* Icon color */
+    transition: fill 0.3s ease;
+}
+
+.theme-toggle-btn:hover svg {
+    fill: var(--link-hover-color); /* Icon color on hover */
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none; /* Hidden by default on larger screens */
+    background-color: transparent; /* Ghost style (no background) */
+    border: none; /* No border */
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu:hover {
+    background-color: transparent; /* No background change on hover */
+}
+
+.hamburger-menu svg {
+    fill: var(--link-color); /* Icon color */
+    transition: fill 0.3s ease;
+}
+
+.hamburger-menu:hover svg {
+    fill: var(--link-hover-color); /* Icon color on hover */
+}
+
+/* Show the hamburger menu on smaller screens */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Show hamburger menu on mobile */
+    }
+
+    .navbar-center {
+        display: none; /* Hide navbar center items on mobile */
+    }
+
+    .navbar-mobile {
+        display: block; /* Show mobile menu */
+    }
 }

@@ -37,9 +37,9 @@ const AllMovies = () => {
 
     return (
         <div>
-            <div className="max-w-7xl mx-auto my-12">
-            <h1 className="text-gray-300 font-bold text-2xl md:text-3xl lg:text-5xl ">Movies</h1>
-            <p className="text-gray-300">Movies move us like nothing else can, whether they’re scary, funny, <br /> dramatic, romantic or anywhere in-between. So many titles, so much to <br /> experience.</p>
+            <div className="max-w-7xl mx-auto px-8 md:px-0 my-12">
+            <h1 className=" font-bold text-2xl md:text-3xl lg:text-5xl ">Movies</h1>
+            <p className="">Movies move us like nothing else can, whether they’re scary, funny, <br /> dramatic, romantic or anywhere in-between. So many titles, so much to <br /> experience.</p>
 
             </div>
            

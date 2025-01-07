@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="">
             <footer className="footer max-w-7xl mb-0 mx-auto px-3 md:px-5 lg:px-0 text-base-content  py-28">
                 <nav className="text-base text-gray-300">
-                    <h6 className="footer text-3xl font-bold text-gray-300 text-red-600">Movie Portal</h6>
+                    <h6 className="footer text-3xl font-bold  text-red-600">Movie Portal</h6>
                     <div className="flex items-center gap-3 mt-5">
                         <span><MdOutlineEmail /></span>
                         <p> movieportal@gamil.com</p>
@@ -16,21 +16,21 @@ const Footer = () => {
                         <p>+00 8976585</p>
                     </div>       
                 </nav>
-                <nav className=" text-gray-300">
-                    <h6 className="footer text-xl font-bold text-gray-300">Company</h6>
+                <nav className=" ">
+                    <h6 className="footer text-xl font-bold ">Company</h6>
                     <a className="link link-hover">About Us</a>
                     <a className="link link-hover">Privacy policy </a>
                     <a className="link link-hover">Contact Us</a>
                 </nav>
-                <nav className=" text-gray-300">
-                    <h6 className="footer text-xl font-bold text-gray-300">Premium Movies</h6>
+                <nav className="">
+                    <h6 className="footer text-xl font-bold ">Premium Movies</h6>
                     <a className="link link-hover">Fast Furious</a>
                     <a className="link link-hover">Titanic </a>
                     <a className="link link-hover">Womens day</a>
                    
                 </nav>
-                <nav className="text-lg text-gray-300">
-                    <h6 className="footer text-xl font-bold mb-6 text-gray-300">Follow Us</h6>
+                <nav className="text-lg ">
+                    <h6 className="footer text-xl font-bold mb-6 ">Follow Us</h6>
                     <div className="grid grid-flow-col gap-4">
                        
                         <a className="text-blue-600" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">

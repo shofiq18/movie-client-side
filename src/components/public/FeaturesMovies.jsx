@@ -30,7 +30,7 @@ const FeaturesMovies = () => {
         <div >
 
            <div className='max-w-7xl mx-auto px-8 md:px-0 '>
-           <h1 className="  font-bold text-xl  md:text-4xl text-gray-300  mt-8 md:my-12"> Our Featured Movies  </h1>
+           <h1 className="  font-bold text-xl  md:text-4xl   mt-8 md:my-12"> Our Featured Movies  </h1>
 
            </div>
             <div className="grid md:grid-cols-3 lg:grid-cols-6 my-12 max-w-7xl mx-auto gap-5 ">
