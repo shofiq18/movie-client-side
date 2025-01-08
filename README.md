@@ -6,13 +6,8 @@ Welcome to Movie Portal! This platform is your ultimate destination for explorin
 
 
 
-## Deployment
-
-To deploy this project run
-
-```bash
-  https://movie-portal-4ef85.web.app/
-```
+## Live URL
+[Visit FoodBridge](https://movie-portal-4ef85.web.app/)
 
 
 # Key Features
