@@ -7,7 +7,7 @@ Welcome to Movie Portal! This platform is your ultimate destination for explorin
 
 
 ## Live URL
-[Visit FoodBridge](https://movie-portal-4ef85.web.app/)
+[Visit Movie Portal](https://movie-portal-4ef85.web.app/)
 
 
 # Key Features
