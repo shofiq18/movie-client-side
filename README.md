@@ -1,38 +1,113 @@
-
 # Movie Portal
 
+<div align="center">
+  <img src="https://i.ibb.co.com/X4Bfs21/uuuu.jpg" />
+</div>
 
-Welcome to Movie Portal! This platform is your ultimate destination for exploring and discovering your favorite movies and TV shows. Dive into a seamless experience of browsing, searching, and enjoying detailed information about films from a vast library.
+## Overview 
+
+A full-stack movie portal website where users can explore movies, read details, and manage their watchlist. Built with modern web technologies including React, Node.js, Express, and MongoDB.
 
 
 
-## Deployment
+## Technologies Used 
 
-To deploy this project run
+### Frontend
+- React.js
+- Tailwind CSS
+- JavaScript (ES6+)
+- Lucide React (for icons)
 
-```bash
-  https://movie-portal-4ef85.web.app/
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+
+## Features 
+
+- 🎬 Browse movies with dynamic filtering
+- 🔍 Advanced search functionality
+- 👤 User authentication and profiles
+- 📱 Responsive design for all devices
+- 💾 Watchlist management
+- 🌙 Dark/Light mode toggle
+
+## Dependencies 
+
+### Frontend Dependencies
+```json
+{
+  "react": "^18.3.1",
+  "react-dom": "^18.3.1",
+  "tailwindcss": "^3.4.1",
+  "lucide-react": "^0.344.0"
+}
 ```
 
+### Backend Dependencies
+```json
+{
+  "express": "^4.18.2",
+  "mongoose": "^8.0.0",
+  "cors": "^2.8.5",
+  "dotenv": "^16.3.1"
+}
+```
 
-# Key Features
+## Running Locally 
 
-- Extensive Movie Library: Explore a massive collection of movies and TV shows with comprehensive details, including cast, crew, release dates, and genres.
-- Smart Search: Quickly find your favorite titles or discover new gems with our intelligent search functionality.
-- Responsive Design: Enjoy a user-friendly experience on any device, be it desktop, tablet, or smartphone.
-- Personalized Recommendations: Receive tailored suggestions based on your viewing history and preferences.
-- Detailed Ratings & Reviews: Check ratings, read reviews, and even leave your feedback to help others in the community.
+### Frontend Setup 
 
+```bash
+# Clone the repository
+git clone <repository-url>
 
+# Navigate to frontend directory
+cd movie-portal/movie-client-side
 
+# Install dependencies
+npm install
 
-## Tech Stack
+# Start development server
+npm run dev
+```
 
+### Backend Setup 
 
-- Frontend: React, Tailwind CSS, daisyui 
-- Backend: Node.js, Express
-- Database: MongoDB
-- API Integration: TMDb API
+```bash
+# Navigate to backend directory
+cd movie-portal/movie-server-side
+
+# Install dependencies
+npm install
+
+# Create .env file and add your MongoDB URI
+echo "MONGODB_URI=your_mongodb_uri" > .env
+
+# Start the server
+npm run dev
+```
+
+The frontend will run on `http://localhost:5173` and the backend on `http://localhost:5000`.
+
+## Environment Variables 
+
+Create a `.env` file in the backend directory:
+
+```env
+MONGODB_URI=your_mongodb_uri
+PORT=5000
+```
+
+## Deployment & Github Link
+
+github client Link: https://github.com/shofiq18/movie-client-side
+
+github server Link: https://github.com/shofiq18/movie-server-side
+
+Live Link: https://movie-portal-4ef85.web.app/
+
 
 
 
