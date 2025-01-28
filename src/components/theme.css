@@ -2,18 +2,24 @@
 :root {
     --background-color: #ffffff; /* Light mode background */
     --text-color: #000000; /* Light mode text */
+    --footer-text-color: #000000; /* Light mode footer text color */
     --secondary-color: #f0f0f0; /* Light mode secondary background */
     --link-color: #007bff; /* Light mode link color */
     --link-hover-color: #ff4500; /* Light mode link hover color */
+    --navbar-bg-color: #ffffff; /* Light mode navbar background */
+    --navbar-text-color: #000000; /* Light mode navbar text */
 }
 
 /* Dark Mode Variables */
 body.dark-mode {
     --background-color: #121212; /* Dark mode background */
     --text-color: #ffffff; /* Dark mode text */
+    --footer-text-color: #ffffff; /* Dark mode footer text color */
     --secondary-color: #1f1f1f; /* Dark mode secondary background */
     --link-color: #1e90ff; /* Dark mode link color */
     --link-hover-color: #ff6347; /* Dark mode link hover color */
+    --navbar-bg-color: #121212; /* Dark mode navbar background */
+    --navbar-text-color: #ffffff; /* Dark mode navbar text */
 }
 
 /* Apply the Theme */
@@ -23,35 +29,66 @@ body {
     font-family: Arial, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-
-
-
-
-.navbar a:hover {
-    color: var(--link-hover-color);
+/* Icon color in light mode */
+body {
+    --user-icon-color: #000000; /* Light mode color */
 }
 
-.menu a {
-    color: var(--text-color);
+/* Dark Mode Icon Color */
+body.dark-mode {
+    --user-icon-color: #ffffff; /* Dark mode color */
+}
+
+/* Apply to user icon */
+.navbar .user-icon {
+    color: var(--user-icon-color); /* Icon color based on theme */
+}
+
+
+/* Navbar styles */
+.navbar {
+    background-color: var(--navbar-bg-color); /* Use navbar background variable */
+    color: var(--navbar-text-color); /* Use navbar text color variable */
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar a {
+    color: var(--navbar-text-color); /* Use navbar text color variable */
     transition: color 0.3s ease;
 }
 
-.menu a:hover {
-    color: var(--link-hover-color);
+/* Contact Form Specific Styles */
+.input,
+.textarea {
+    color: var(--text-color); /* Text color based on the current theme */
+    background-color: var(--secondary-color); /* Background color based on the current theme */
+    border: 1px solid #666; /* Border color */
 }
 
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: var(--link-color); /* Highlight border color on focus */
+}
+
+/* Text color for labels */
+label {
+    color: var(--text-color); /* Text color for labels based on the current theme */
+}
+
+
+
+/* Footer styles */
 footer {
-    
-    color: var(--text-color);
+    color: var(--footer-text-color); /* Use footer text color variable */
     padding: 1rem;
     text-align: center;
 }
 
-footer a {
+/* footer a {
     color: var(--link-color);
     transition: color 0.3s ease;
-}
+} */
 
 footer a:hover {
     color: var(--link-hover-color);
@@ -74,6 +111,38 @@ footer a:hover {
     background-color: rgb(168, 21, 21); /* Red background on hover */
     color: white; /* White text on hover */
 }
+/* Button Styles */
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background-color: #d32f2f; /* Default red background */
+    color: #ffffff; /* Always white text */
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #b71c1c; /* Darker red background on hover */
+    color: #ffffff; /* Maintain white text color on hover */
+}
+
+/* Label styles for dark mode */
+body.dark-mode .label-text {
+    color: #ffffff; /* White text for Email and Password labels */
+}
+
+body.dark-mode .label-text-alt {
+    color: #ffffff; /* White text for "Forgot password?" */
+}
+
+body.dark-mode .label-text-alt:hover {
+    color: var(--link-hover-color); /* Hover effect for the link */
+}
+
+
 
 /* Navbar Login Button */
 .navbar .login-btn {

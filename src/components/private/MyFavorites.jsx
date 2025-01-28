@@ -1,4 +1,4 @@
- 
+
 
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
@@ -28,25 +28,19 @@ const FavoriteMovies = () => {
                 fetch(`https://movie-portal-server-sigma.vercel.app/favorites/${id}`, {
                     method: "DELETE"
                 })
-                .then((res) => res.json())
-                .then((data) => {
-                    if (data.deletedCount > 0) {
-                        Swal.fire("Deleted!", "The movie has been removed from your favorites.", "success");
-                        setFavorites(favorites.filter((movie) => movie._id !== id));
-                    }
-                })
-                .catch((err) => console.error("Error deleting favorite movie:", err));
+                    .then((res) => res.json())
+                    .then((data) => {
+                        if (data.deletedCount > 0) {
+                            Swal.fire("Deleted!", "The movie has been removed from your favorites.", "success");
+                            setFavorites(favorites.filter((movie) => movie._id !== id));
+                        }
+                    })
+                    .catch((err) => console.error("Error deleting favorite movie:", err));
             }
         });
     };
 
- 
-    
 
-
-
-
-    
     return (
         <div className="container mx-auto my-8">
             <h1 className="text-4xl font-bold text-center mb-6">My Favorite Movies</h1>
@@ -62,7 +56,8 @@ const FavoriteMovies = () => {
                             <p>Rating: {movie.rating}</p>
                             <button
                                 onClick={() => handleDeleteFavorite(movie._id)}
-                                className="btn mt-4 w-full bg-red-700 text-white hover:bg-red-900">
+                                className="btn mt-4 w-full bg-red-700 text-white hover:bg-red-900"
+                            >
                                 Delete Favorite
                             </button>
                         </div>

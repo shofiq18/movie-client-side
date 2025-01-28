@@ -93,7 +93,7 @@ const UpdateMovie = ({ onAddMovie }) => {
 
     return (
         <div className="add-movie-form my-8">
-            <h2 className='text-3xl text-white font-bold text-center my-12'>Update Your Movie</h2>
+            <h2 className='text-3xl  font-bold text-center my-12'>Update Your Movie</h2>
             
             <div className='border border-gray-800 max-w-3xl mx-auto  p-8  '>
                 <form onSubmit={handleSubmit(onSubmit)}>

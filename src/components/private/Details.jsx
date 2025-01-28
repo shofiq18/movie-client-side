@@ -67,7 +67,7 @@ const Details = () => {
 
     return (
         <div>
-            <h1 className="text-4xl font-bold text-white text-center mt-8 ">Movie Details</h1>
+            <h1 className="text-4xl font-bold  text-center mt-8 ">Movie Details</h1>
 
             <div className="max-w-4xl mx-auto my-16 card md:card-side  bg-gray-950 shadow-xl">
                 <figure>
@@ -76,12 +76,12 @@ const Details = () => {
                         alt="Movie" className="w-full md:w-[350px] h-[400px]" />
                 </figure>
                 <div className="card-body">
-                    <h2 className="card-title text-3xl font-bold text-white">Title: {detail.title}</h2>
-                    <p> Genre: {detail.genre[0]}</p>
-                    <p>Summary: {detail.summary}</p>
-                    <p>ReleaseYear: {detail.releaseYear}</p>
-                    <p>Duration: {detail.duration} min</p>
-                    <p>Rating: {detail.rating}</p>
+                    <h2 className="card-title text-3xl font-bold text-white ">Title: {detail.title}</h2>
+                    <p className="text-white"> Genre: {detail.genre[0]}</p>
+                    <p className="text-white">Summary: {detail.summary}</p>
+                    <p className="text-white">ReleaseYear: {detail.releaseYear}</p>
+                    <p className="text-white">Duration: {detail.duration} min</p>
+                    <p className="text-white">Rating: {detail.rating}</p>
                     <div className="card-actions flex justify-between">
                         <button
                             onClick={() => handleDelete(detail._id)}

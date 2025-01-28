@@ -82,7 +82,7 @@ const Register = () => {
             <div data-aos="flip-left"
                 data-aos-easing="ease-out-cubic"
                 data-aos-duration="2000" className="flex justify-center items-center my-12 ">
-                <div className="hero-content border border-gray-800 flex-col ">
+                <div className="hero-content border border-gray-50 flex-col ">
                     <div className="text-center lg:text-left">
                         <h1 className=" text-2xl md:text-3xl lg:text-5xl font-bold">
                             Register now!

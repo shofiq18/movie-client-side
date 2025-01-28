@@ -27,29 +27,42 @@ const Navbar = () => {
     const closeMenu = () => {
         setIsMenuOpen(false);
     };
-
     const links = (
         <>
             <li>
-                <NavLink to="/" className="hover:text-red-500" onClick={closeMenu}>Home</NavLink>
+                <NavLink to="/" className="hover:text-red-500 text-black" onClick={closeMenu}>
+                    Home
+                </NavLink>
             </li>
             <li>
-                <NavLink to="/movies" className="hover:text-red-500" onClick={closeMenu}>All Movies</NavLink>
+                <NavLink to="/movies" className="hover:text-red-500" onClick={closeMenu}>
+                    All Movies
+                </NavLink>
             </li>
+            {user?.email && (
+                <>
+                    <li>
+                        <NavLink to="/add" className="hover:text-red-500" onClick={closeMenu}>
+                            Add Movie
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/favorites" className="hover:text-red-500" onClick={closeMenu}>
+                            My Favorites
+                        </NavLink>
+                    </li>
+                </>
+            )}
             <li>
-                <NavLink to="/add" className="hover:text-red-500" onClick={closeMenu}>Add Movie</NavLink>
-            </li>
-            <li>
-                <NavLink to="/favorites" className="hover:text-red-500" onClick={closeMenu}>My Favorites</NavLink>
-            </li>
-            <li>
-                <NavLink to="/contact" className="hover:text-red-500" onClick={closeMenu}>Contact us</NavLink>
+                <NavLink to="/contact" className="hover:text-red-500" onClick={closeMenu}>
+                    Contact us
+                </NavLink>
             </li>
         </>
     );
 
     return (
-        <div data-aos="fade-down" className="sticky top-0 z-50 shadow-md  py-4">
+        <div data-aos="fade-down" className="navbar sticky top-0 z-30 shadow-md py-4">
             <div className="navbar max-w-7xl mx-auto flex items-center px-4 md:px-2">
                 {/* Mobile Hamburger Menu */}
                 <button
@@ -74,9 +87,7 @@ const Navbar = () => {
 
                 {/* Dropdown Menu for Mobile */}
                 <div
-                    className={`lg:hidden ${
-                        isMenuOpen ? 'block' : 'hidden'
-                    } absolute top-full left-0 w-full bg-gray-800 te z-50`}
+                    className={`lg:hidden ${isMenuOpen ? 'block' : 'hidden'} absolute top-full left-0 w-full bg-gray-800 te z-50`}
                 >
                     <div className="p-4 flex justify-between items-center">
                         <h3 className="text-lg font-bold">Menu</h3>
@@ -114,9 +125,9 @@ const Navbar = () => {
                 </div>
 
                 <div className="navbar-start flex items-center">
-                    <Link to="/" className="text-xl md:text-3xl text-red-600 font-bold  ml-2">
+                    <h className="text-xl md:text-3xl text-red-600 font-bold ml-2 movie-portal">
                         Movie Portal
-                    </Link>
+                    </h>
                 </div>
 
                 <div className="navbar-center hidden lg:flex">
@@ -132,15 +143,16 @@ const Navbar = () => {
                             <img
                                 src={user.photoURL}
                                 alt="User"
-                                className="w-10 h-10 rounded-full border-2  object-cover cursor-pointer"
+                                className="w-10 h-10 rounded-full border-2 object-cover cursor-pointer"
                             />
                             <span className="absolute left-1/2 transform -translate-x-1/2 bottom-[-2rem] hidden group-hover:block bg-gray-800 text-white text-sm px-3 py-1 rounded-md shadow-lg">
                                 {user.displayName}
                             </span>
                         </div>
                     ) : (
-                        <FaUserCircle className="text-4xl text-white" />
+                        <FaUserCircle className="text-4xl user-icon" />
                     )}
+
 
                     {/* Log In / Log Out Button */}
                     {user?.email ? (
